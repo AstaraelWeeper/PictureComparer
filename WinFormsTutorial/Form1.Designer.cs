@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblStatusLeft = new System.Windows.Forms.Label();
             this.chkPauseLeft = new System.Windows.Forms.CheckBox();
             this.btnShowLeft = new System.Windows.Forms.Button();
             this.btnClearLeft = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.btnNextLeft = new System.Windows.Forms.Button();
             this.checkBoxLeft = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblStatusRight = new System.Windows.Forms.Label();
             this.chkPauseRight = new System.Windows.Forms.CheckBox();
             this.showButton = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.lblStatusLeft = new System.Windows.Forms.Label();
-            this.lblStatusRight = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -76,6 +76,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -85,6 +86,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DarkOrchid;
             this.panel1.Controls.Add(this.lblStatusLeft);
             this.panel1.Controls.Add(this.chkPauseLeft);
             this.panel1.Controls.Add(this.btnShowLeft);
@@ -97,6 +99,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(628, 94);
             this.panel1.TabIndex = 3;
+            // 
+            // lblStatusLeft
+            // 
+            this.lblStatusLeft.AutoSize = true;
+            this.lblStatusLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusLeft.Location = new System.Drawing.Point(10, 77);
+            this.lblStatusLeft.Name = "lblStatusLeft";
+            this.lblStatusLeft.Size = new System.Drawing.Size(0, 13);
+            this.lblStatusLeft.TabIndex = 14;
             // 
             // chkPauseLeft
             // 
@@ -142,7 +153,7 @@
             // 
             // btnNextLeft
             // 
-            this.btnNextLeft.Location = new System.Drawing.Point(517, 21);
+            this.btnNextLeft.Location = new System.Drawing.Point(468, 21);
             this.btnNextLeft.Name = "btnNextLeft";
             this.btnNextLeft.Size = new System.Drawing.Size(75, 23);
             this.btnNextLeft.TabIndex = 12;
@@ -163,6 +174,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOrchid;
             this.panel2.Controls.Add(this.lblStatusRight);
             this.panel2.Controls.Add(this.chkPauseRight);
             this.panel2.Controls.Add(this.showButton);
@@ -175,6 +187,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(629, 94);
             this.panel2.TabIndex = 4;
+            // 
+            // lblStatusRight
+            // 
+            this.lblStatusRight.AutoSize = true;
+            this.lblStatusRight.Location = new System.Drawing.Point(4, 75);
+            this.lblStatusRight.Name = "lblStatusRight";
+            this.lblStatusRight.Size = new System.Drawing.Size(0, 13);
+            this.lblStatusRight.TabIndex = 7;
             // 
             // chkPauseRight
             // 
@@ -199,7 +219,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(489, 21);
+            this.btnNext.Location = new System.Drawing.Point(437, 21);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 5;
@@ -241,6 +261,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(637, 3);
             this.pictureBox2.Name = "pictureBox2";
@@ -254,22 +275,6 @@
             this.openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
     "s (*.*)|*.*";
             this.openFileDialog1.Title = "Select a Picture File";
-            // 
-            // lblStatusLeft
-            // 
-            this.lblStatusLeft.AutoSize = true;
-            this.lblStatusLeft.Location = new System.Drawing.Point(10, 77);
-            this.lblStatusLeft.Name = "lblStatusLeft";
-            this.lblStatusLeft.Size = new System.Drawing.Size(0, 13);
-            this.lblStatusLeft.TabIndex = 14;
-            // 
-            // lblStatusRight
-            // 
-            this.lblStatusRight.AutoSize = true;
-            this.lblStatusRight.Location = new System.Drawing.Point(4, 75);
-            this.lblStatusRight.Name = "lblStatusRight";
-            this.lblStatusRight.Size = new System.Drawing.Size(0, 13);
-            this.lblStatusRight.TabIndex = 7;
             // 
             // Form1
             // 
