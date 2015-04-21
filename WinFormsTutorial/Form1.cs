@@ -26,6 +26,8 @@ namespace WinFormsTutorial
 
         public Form1()
         {
+            
+
             InitializeComponent();
             if (Directory.Exists(FOLDER))
             {
@@ -42,7 +44,7 @@ namespace WinFormsTutorial
                 UpdateImage();
             }
 
-            _timer = new System.Timers.Timer(10000);
+            _timer = new System.Timers.Timer(2000);
 
             _timer.Elapsed += new System.Timers.ElapsedEventHandler(Timer_Elapsed);
 
@@ -79,15 +81,18 @@ namespace WinFormsTutorial
         private void MoveBothImages()
         {
             _currentDisplayIndexLeft++;
-
-           if (_currentDisplayIndexLeft >= _picturesToDisplayLeft.Length)
+            _currentDisplayIndexRight++;
+            
+            if (_currentDisplayIndexLeft >= _picturesToDisplayLeft.Length)
+            {
                 _currentDisplayIndexLeft = 0;
+            }
           
 
-            _currentDisplayIndexRight++;
-
             if (_currentDisplayIndexRight >= _picturesToDisplayRight.Length)
+            {
                 _currentDisplayIndexRight = 0;
+            }
             UpdateImage();
        }
 
@@ -136,12 +141,20 @@ namespace WinFormsTutorial
         }
         //key methods
 
+          delegate void UpdateStatusCallback(string currentImageLeft, string currentImageRight);
+
         private void UpdateStatus(string currentImageLeft, string currentImageRight)
         {
-           
-            lblStatusLeft.Text = "Showing: " + currentImageLeft;
-            lblStatusRight.Text = "Showing: " + currentImageRight; //this is causing the exception when the timer runs out.
-            
+            if (lblStatusLeft.InvokeRequired || lblStatusRight.InvokeRequired)
+            {
+                UpdateStatusCallback callback = new UpdateStatusCallback(UpdateStatus);
+                Invoke(callback, currentImageLeft, currentImageRight);
+            }
+            else
+            {
+                lblStatusLeft.Text = "Showing: " + currentImageLeft;
+                lblStatusRight.Text = "Showing: " + currentImageRight; //this is causing the exception when the timer runs out.
+            }
         }
 
         private void updateCurrentFilePath(int side) 
@@ -266,10 +279,6 @@ namespace WinFormsTutorial
             _timer.Stop();
             _timer.Start();
         }
-
-        
-
-        
 
        
     }
