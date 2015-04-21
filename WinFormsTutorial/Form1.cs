@@ -44,7 +44,7 @@ namespace WinFormsTutorial
                 UpdateImage();
             }
 
-            _timer = new System.Timers.Timer(2000);
+            _timer = new System.Timers.Timer(10000);
 
             _timer.Elapsed += new System.Timers.ElapsedEventHandler(Timer_Elapsed);
 
@@ -70,12 +70,15 @@ namespace WinFormsTutorial
                 MoveBothImages();
             }
 
-           else if(chkPauseRight.Checked == false){
+           else
+           {
+             if (chkPauseRight.Checked == false){
             MoveNextImageRight();
             }
             if(chkPauseLeft.Checked == false){
             MoveNextImageLeft();
             }
+          }
         }
 
         private void MoveBothImages()
@@ -157,7 +160,7 @@ namespace WinFormsTutorial
             }
         }
 
-        private void updateCurrentFilePath(int side) 
+        private void updateCurrentFilePath(int side) //updates the main directory if the user manually selects a file using the show button
         {
             String currentFile = openFileDialog1.FileName;
             FileInfo fileInfo = new FileInfo(currentFile);
